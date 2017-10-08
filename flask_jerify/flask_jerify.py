@@ -138,7 +138,7 @@ class Jerify(object):
         else:
             log = 'Unknown schema: {}'.format(schema_name)
             self.logger.error(log)
-            raise InternalServerError()
+            raise InternalServerError() 
 
     def request(self, schema=None):
         def decorator(f):
@@ -169,7 +169,7 @@ class Jerify(object):
                         referrer=schema
                         )
                 jsonschema.validate(
-                        request.get_json(),
+                        dict_,
                         schema,
                         resolver=resolver
                         )
